@@ -1,6 +1,5 @@
 # Use NodeJS base image
 FROM node:13
-FROM nginx:alpine
 
 # Create app directory
 WORKDIR /usr/src/app
@@ -20,5 +19,6 @@ EXPOSE 8080
 
 # Define the Docker image's behavior at runtime
 CMD ["node", "server.js"]
- 
+
+FROM nginx:alpine
 COPY nginx.conf /etc/nginx/nginx.conf
